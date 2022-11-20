@@ -43,6 +43,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+
 flutter_icons:
   android: "launcher_icon"
   ios: true
@@ -71,6 +72,7 @@ flutter:
     - images/p1.png
     - images/p2.jpg
     - images/chulogo.png
+    - assets/Someday.mp3
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

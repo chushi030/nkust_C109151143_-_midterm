@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 final player=AudioPlayer();
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -37,13 +36,13 @@ class _MyAppState extends State<MyApp> {
           currentIndex: _currentindex,
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home),
-                                    label: 'Home',
+                                    label: '關於我',
                                     ),
             BottomNavigationBarItem(icon: Icon(Icons.access_alarm),
-                                    label: 'Alarm',
+                                    label: '學習歷程',
                                     ),
             BottomNavigationBarItem(icon: Icon(Icons.business),
-                                    label: 'Business',
+                                    label: '未來規劃',
                                     ),
             BottomNavigationBarItem(icon: Icon(Icons.school),
                                     label: 'School',
@@ -87,7 +86,7 @@ class screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    player.play(AssetSource("Free_Test_Data_1MB_MP3.mp3"));
+    player.play(AssetSource("Someday.mp3"));
 
     return SingleChildScrollView(
       child: Column(

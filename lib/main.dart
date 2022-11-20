@@ -136,12 +136,12 @@ class screen1 extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 2,
-                    color: Color(0xFFC09A0B),
+                    color: Color(0xFF49A4B6),
                     style: BorderStyle.solid,
                   ),
                   borderRadius: BorderRadius.circular(30),
                   image: DecorationImage(
-                    image: AssetImage('images/f1.jpg'),
+                    image: AssetImage('images/p2.jpg'),
                     fit: BoxFit.cover ,
                   ),
                   color: Colors.white,
@@ -153,7 +153,7 @@ class screen1 extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 2,
-                    color: Colors.purple,
+                    color: Color(0xFFCEA51E),
                     style: BorderStyle.solid,
                   ),
                   borderRadius: BorderRadius.circular(30),

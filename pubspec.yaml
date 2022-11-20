@@ -39,8 +39,14 @@ dependencies:
   audioplayers: ^1.1.1
 
 dev_dependencies:
+  flutter_launcher_icons: 0.9.0
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/chulogo.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -62,8 +68,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/f1.jpg
-
+    - images/p1.png
+    - images/p2.jpg
+    - images/chulogo.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -76,9 +83,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-   - family: setofont
+   - family: otakupencil
      fonts:
-       - asset: fonts/setofont.ttf
+       - asset: fonts/otakupencil.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

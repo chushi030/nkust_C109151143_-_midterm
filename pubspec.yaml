@@ -71,6 +71,10 @@ flutter:
   assets:
     - images/p1.png
     - images/p2.jpg
+    - images/p3.jpg
+    - images/background.png
+    - images/license01.png
+    - images/license02.png
     - images/chulogo.png
     - assets/Someday.mp3
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -85,9 +89,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-   - family: otakupencil
-     fonts:
-       - asset: fonts/otakupencil.ttf
+    - family: otakupencil
+      fonts:
+        - asset: fonts/otakupencil.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

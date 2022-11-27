@@ -10,7 +10,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   final tabs=[
     Center(child: screen1()),
     Center(child: screen2()),
@@ -22,40 +21,43 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+     player.play(AssetSource("Someday.mp3"));
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('Midterm'),backgroundColor:Color(0xFFE1C757),),
+        appBar: AppBar(title: Text('期中作業-自傳'),backgroundColor:Color(0xFFE1C757),),
         body: tabs[_currentindex],
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: Color(0xFFE1C757),
           selectedItemColor: Colors.white,
           selectedFontSize: 18.0,
+          selectedLabelStyle: TextStyle(fontFamily: 'otakupencil',),
+          unselectedItemColor: Color(0xFF806124),
           unselectedFontSize: 14.0,
           iconSize: 30.0,
           currentIndex: _currentindex,
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home),
-                                    label: '關於我',
-                                    ),
-            BottomNavigationBarItem(icon: Icon(Icons.access_alarm),
-                                    label: '學習歷程',
-                                    ),
-            BottomNavigationBarItem(icon: Icon(Icons.business),
-                                    label: '未來規劃',
-                                    ),
-            BottomNavigationBarItem(icon: Icon(Icons.school),
-                                    label: 'School',
-                                    ),
+            BottomNavigationBarItem(icon: Icon(Icons.mood),
+              label: '關於我',
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.insights),
+              label: '學習歷程',
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.grade),
+              label: '未來規劃',
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.emoji_flags),
+              label: '專案方向',
+            ),
           ],
           onTap: (index) { setState(() {
-                                       _currentindex=index;
-                                       if (index!=0) {
-                                         player.stop();
-                                       }
-                         });
-        },
-      ),
+            _currentindex=index;
+            if (index!=0) {
+              player.stop();
+            }
+          });
+          },
+        ),
       ),
     );
   }
@@ -81,12 +83,10 @@ class screen1 extends StatelessWidget {
       '這並沒有讓我氣餒，我也想要追上那些在我前面的人的腳步，這也是我選擇離開澎湖舒適圈，來到台灣的原因。\n'
       '當在擅長的領域時，我總是很專注，當鑽研的⽅向有所成果時就特別有成就感。'
       '期待在未來能保持這樣的熱忱，在課業上有更好的表現！'
-      ;
+  ;
 
   @override
   Widget build(BuildContext context) {
-
-    player.play(AssetSource("Someday.mp3"));
 
     return SingleChildScrollView(
       child: Column(
@@ -96,8 +96,8 @@ class screen1 extends StatelessWidget {
             child: Text("我的自傳",
                 style: TextStyle(fontSize:30,
                   fontWeight:FontWeight.w500,
-                    color: Color(0xFFC58E23),
-                    fontFamily: 'otakupencil',)),
+                  color: Color(0xFFC58E23),
+                  fontFamily: 'otakupencil',)),
           ),
           //文字自傳部份
           Container(
@@ -111,16 +111,16 @@ class screen1 extends StatelessWidget {
               ],),
             child:Text(s1,
               style: TextStyle( fontSize: 20,
-                                letterSpacing: 2.0,
-                                height:1.5,
-                                fontFamily: 'otakupencil',),),
+                letterSpacing: 2.0,
+                height:1.5,
+                fontFamily: 'otakupencil',),),
           ),
 
           //放一張照片
           Container(
-            color: Color(0xFF627888),
+            color: Color(0xFF9E8A3E),
             child: Image.asset('images/p1.png'),
-            height: 200,
+            height: 210,
             width: 300,
           ),
           SizedBox(height: 30,),
@@ -130,12 +130,12 @@ class screen1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                width: 150,
-                height: 150,
+                width: 180,
+                height: 250,
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 2,
-                    color: Color(0xFF49A4B6),
+                    color: Color(0xFFC09A0B),
                     style: BorderStyle.solid,
                   ),
                   borderRadius: BorderRadius.circular(30),
@@ -147,7 +147,7 @@ class screen1 extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 150,
+                width: 180,
                 height: 150,
                 decoration: BoxDecoration(
                   border: Border.all(
@@ -157,7 +157,7 @@ class screen1 extends StatelessWidget {
                   ),
                   borderRadius: BorderRadius.circular(30),
                   image: DecorationImage(
-                    image: AssetImage('images/chulogo.png'),
+                    image: AssetImage('images/p3.jpg'),
                     fit: BoxFit.cover ,
                   ),
                   color: Colors.white,
@@ -171,10 +171,34 @@ class screen1 extends StatelessWidget {
   }
 }
 
+
 class screen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(child:Text('學習歷程'),);
+    return SingleChildScrollView(
+        child: Container(
+          height: 650,
+          width: double.infinity,
+        decoration: BoxDecoration(
+        image: DecorationImage(image: AssetImage("images/background.png"),     //設定背景圖片
+                                fit: BoxFit.cover),
+    ),
+      child: Column(
+       children:<Widget>[
+         Padding(padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
+           child: Text("學習歷程",
+               textAlign: TextAlign.center,
+               style: TextStyle(fontSize:30,
+                 fontWeight:FontWeight.w500,
+                 color: Color(0xFFC58E23),
+                 fontFamily: 'otakupencil',)
+           ),
+         ),
+        Container(child:Text('技術士證照'),),
+        ],
+      ),
+     ),
+    );
   }
 }
 
@@ -191,21 +215,21 @@ class screen3 extends StatelessWidget {
           ),
           SizedBox(height: 10,),
           Row(mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                    height: 200,
-                    width: 200,
-                  child: ListView(
-                    children: [
-                      //條列式參考
-                      Text('1. 學好英文'),
-                      Text('2. 組合語言'),
-                      Text('3. 考取證照'),
-                      Text('4. 人際關係'),
-                    ],
-                  ),
+            children: [
+              Container(
+                height: 200,
+                width: 200,
+                child: ListView(
+                  children: [
+                    //條列式參考
+                    Text('1. 學好英文'),
+                    Text('2. 組合語言'),
+                    Text('3. 考取證照'),
+                    Text('4. 人際關係'),
+                  ],
                 ),
-              ],),
+              ),
+            ],),
           Row(),
           Row(),
           Row(),

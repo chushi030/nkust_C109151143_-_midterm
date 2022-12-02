@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 final player=AudioPlayer();
+
 class screen1 extends StatelessWidget {
 
   final String s1='我叫做鐘慧娟，來自四面環海的澎湖灣，現在就讀於高雄科技大學的資訊工程系。\n'
@@ -26,7 +27,6 @@ class screen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
     return SingleChildScrollView(
       child: Column(
         children:<Widget>[
@@ -36,8 +36,7 @@ class screen1 extends StatelessWidget {
                 style: TextStyle(fontSize:30,
                   fontWeight:FontWeight.w500,
                   color: Color(0xFFC58E23),
-                  fontFamily: 'otakupencil',)
-              ),
+                  fontFamily: 'otakupencil',)),
           ),
           //文字自傳部份
           Container(
@@ -52,15 +51,15 @@ class screen1 extends StatelessWidget {
             child:Text(s1,
               style: TextStyle( fontSize: 20,
                 letterSpacing: 2.0,
-                height:1.5,
+
                 fontFamily: 'otakupencil',),),
           ),
 
           //放一張照片
           Container(
-            color: Color(0xFF627888),
+            color: Color(0xFF9E8A3E),
             child: Image.asset('images/p1.png'),
-            height: 200,
+            height: 210,
             width: 300,
           ),
           SizedBox(height: 30,),
@@ -71,11 +70,11 @@ class screen1 extends StatelessWidget {
             children: [
               Container(
                 width: 150,
-                height: 150,
+                height: 220,
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 2,
-                    color: Color(0xFF49A4B6),
+                    color: Color(0xFFC09A0B),
                     style: BorderStyle.solid,
                   ),
                   borderRadius: BorderRadius.circular(30),
@@ -87,8 +86,8 @@ class screen1 extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 150,
-                height: 150,
+                width: 160,
+                height: 140,
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 2,
@@ -97,7 +96,7 @@ class screen1 extends StatelessWidget {
                   ),
                   borderRadius: BorderRadius.circular(30),
                   image: DecorationImage(
-                    image: AssetImage('images/chulogo.png'),
+                    image: AssetImage('images/p3.jpg'),
                     fit: BoxFit.cover ,
                   ),
                   color: Colors.white,

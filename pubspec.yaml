@@ -75,6 +75,11 @@ flutter:
     - images/background.png
     - images/license01.png
     - images/license02.png
+    - images/license03.png
+    - images/license04.png
+    - images/Certification01.png
+    - images/Certification02.png
+    - images/Certification03.png
     - images/chulogo.png
     - assets/Someday.mp3
   # An image asset can refer to one or more resolution-specific "variants", see
